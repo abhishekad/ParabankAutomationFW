@@ -6,14 +6,22 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 
 public class LogInTest {
-
-    WebDriver driver = Base.getChromeDriver();
+    HomePage homePage = new HomePage();
 
     @Test
     public void loginUsingValidCreds(){
-        HomePage hm = new HomePage(driver);
-        hm.enterUsername("BawlatMayuri");
-        hm.enterPassword("yediMayuri");
-        hm.clickLoginButton();
+        homePage.enterUsername("Abhishek");
+        homePage.enterPassword("Abhipass");
+        homePage.clickLoginButton();
+
     }
+
+    @Test
+    public void loginUsingInvalidCreds(){
+        homePage.enterUsername("Username");
+        homePage.enterPassword("Password");
+        homePage.clickLoginButton();
+    }
+
+
 }

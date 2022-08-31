@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class Base {
@@ -13,7 +14,7 @@ public class Base {
 
 	// Chromedriver
 
-	static WebDriver driver;
+	public static WebDriver driver;
 
 	public static WebDriver getChromeDriver() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhishek Dongare\\eclipse-workspace\\Parabank\\Drivers\\chromedriver.exe");
@@ -24,7 +25,7 @@ public class Base {
 	}
 
 
-	@AfterClass
+	@AfterTest
 	public void TearDownBrowser(){
 		driver.quit();
 	}
