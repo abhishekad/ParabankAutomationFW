@@ -11,7 +11,7 @@ public class LogInTest {
     RegisterPage rp = new RegisterPage();
    WebDriver driver = Base.getChromeDriver();
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginUsingValidCreds(){
         HomePage.enterUsername("Abhishek");
         HomePage.enterPassword("Abhipass");
@@ -19,7 +19,7 @@ public class LogInTest {
 
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginUsingInvalidCreds(){
         HomePage.enterUsername("Username");
         HomePage.enterPassword("Password");
