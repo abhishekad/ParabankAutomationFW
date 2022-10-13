@@ -4,23 +4,33 @@ import base.Base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.RegisterPage;
 
 public class LogInTest {
-    HomePage homePage = new HomePage();
+     HomePage homePage = new HomePage();
+    RegisterPage rp = new RegisterPage();
+   WebDriver driver = Base.getChromeDriver();
 
-    @Test
+    @Test(enabled = true)
     public void loginUsingValidCreds(){
-        homePage.enterUsername("Abhishek");
-        homePage.enterPassword("Abhipass");
-        homePage.clickLoginButton();
+        HomePage.enterUsername("Abhishek");
+        HomePage.enterPassword("Abhipass");
+        HomePage.clickLoginButton();
 
     }
 
-    @Test
+    @Test(enabled = true)
     public void loginUsingInvalidCreds(){
-        homePage.enterUsername("Username");
-        homePage.enterPassword("Password");
-        homePage.clickLoginButton();
+        HomePage.enterUsername("Username");
+        HomePage.enterPassword("Password");
+        HomePage.clickLoginButton();
+    }
+
+    @Test(enabled = true)
+    public void enterValidUsername(){
+        homePage.clickRegisterLink();
+        rp.enterUsername();
+
     }
 
 
